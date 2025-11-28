@@ -52,7 +52,7 @@ jobs:
         run: |
           docker build . -t sameerdh/weather-app:${{ env.VERSION }} 
       
-      # Push the Docker Image
+      # Push the Docker Image to artifactory
       - name: Push Docker Image
         run: |
           docker push sameerdh/weather-app:${{ env.VERSION }}
