@@ -57,14 +57,14 @@ jobs:
         run: |
           docker push sameerdh/weather-app:${{ env.VERSION }}
       
-      # UPdate the K8s Manifest Files
+      # Update the K8s Manifest Files
       - name: Update K8s Manifests
         run: |
           cat deploy/deploy.yaml
           sed -i "s|image: sameerdh/weather-app:.*|image: sameerdh/weather-app:${{ env.VERSION }}|g" deploy/deploy.yaml
           cat deploy/deploy.yaml
 
-      # Update Github
+      # Update Github 
       - name: Commit the changes
         run: |
           git config --global user.email "<>"
